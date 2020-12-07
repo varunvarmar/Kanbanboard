@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="style.css" />
+
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="icon" href="notes.png">
+    <title>Kanban Board</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/600c9b5d0a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<nav class="navbar navbar-light bg-light" style="background-image: linear-gradient(to right, #ffffff,#c8d6e5, #8395a7,#576574);">
+       <a class="navbar-brand" href="#">
+          <img src="notes.png" width="32" height="32" class="d-inline-block align-top" alt="" loading="lazy">
+          <b>Kanban Board</b>
+       </a>
+    </nav>
+
+    <div class="container">
+
+    <br>
+
+      <form onsubmit="take_input()">
+        <div class="row">
+                &emsp;&emsp;&nbsp;
+                <input type="text" id="titleID" class="form-control w-25" name="title" placeholder="Title">&nbsp;
+                <input type="text" id="descID" class="form-control w-50" name="desc" placeholder="Description">&nbsp;
+                <button type="submit" class="btn btn-info"><i class="fas fa-plus-circle"></i>&nbsp;Add</button>&nbsp;
+                <button type="button" class="btn btn-md btn-secondary"><i class="fas fa-trash-alt"></i>&nbsp;Delete All</button>
+        </div>
+      </form>
+
+    <br>
+
+    <div class="row" id="space">
+      <div class="alert alert-danger" role="alert">
+        <i class="fas fa-history"></i>
+        <b>Backlog</b>
+      </div>
+      &emsp;
+      <div class="alert alert-primary" role="alert">
+        <i class="fas fa-clipboard-list"></i>
+        <b>To Do</b>
+      </div>
+      &emsp;
+      <div class="alert alert-warning" role="alert">
+        <i class="fas fa-cogs"></i>
+        <b>In Progress</b>
+      </div>
+      &emsp;
+      <div class="alert alert-success" role="alert">
+        <i class="fas fa-check-circle"></i>&nbsp;
+        <b>Done</b>
+      </div>
+    </div>
+
+	<!-- body/app-->
+	<div class="app">
+		<div class="lists">
+
+			<div class="list main_list">
+
+				<div class="list-item" draggable="true">
+
+          <div class="card">
+            <div class="card-body">
+            <span id="expand"><i class="fas fa-angle-up"></i></span>
+              <h6 class="card-title">Security Check</h6>
+              <p class="card-text" style="font-size: small;">Authentications</p>
+              <i class="fas fa-star"></i>
+              <button type="button" class="btn btn-sm btn-danger" style="background-color: #ff1818;"><i class="fas fa-trash-alt"></i></button>
+            </div>
+          </div>
+
+
+        </div>
+				<div class="list-item" draggable="true">
+
+          <div class="card">
+            <div class="card-body">
+            <span id="expand"><i class="fas fa-angle-up"></i></span>
+              <h6 class="card-title">Software Update</h6>
+              <p class="card-text" style="font-size: small;">Release of Patch 2.0</p>
+              <i class="fas fa-star"></i>
+              <button type="button" class="btn btn-sm btn-danger" style="background-color: #ff1818;"><i class="fas fa-trash-alt"></i></button>
+            </div>
+          </div>
+
+        </div>
+				<div class="list-item" draggable="true">
+
+          <div class="card">
+            <div class="card-body">
+            <span id="expand"><i class="fas fa-angle-up"></i></span>
+              <h6 class="card-title">Problem with Android</h6>
+              <p class="card-text" style="font-size: small;">Testing is required </p>
+              <i class="fas fa-star"></i>
+              <button type="button" class="btn btn-sm btn-danger" style="background-color: #ff1818;"><i class="fas fa-trash-alt"></i></button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      
+      <div class="list">
+        <div class="list-item" draggable="true">
+
+          <div class="card">
+            <div class="card-body">
+            <span id="expand"><i class="fas fa-angle-up"></i></span>
+              <h6 class="card-title">Ticket App</h6>
+              <p class="card-text" style="font-size: small;">Adding new app features</p>
+              <i class="fas fa-star"></i>
+              <button type="button" class="btn btn-sm btn-danger" style="background-color: #ff1818;"><i class="fas fa-trash-alt"></i></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+      <div class="list">
+        <div class="list-item" draggable="true">
+
+          <div class="card">
+            <div class="card-body">
+            <span id="expand"><i class="fas fa-angle-up"></i></span>
+              <h6 class="card-title">Deployment</h6>
+              <p class="card-text" style="font-size: small;">Checking Status</p>
+              <i class="fas fa-star"></i>
+              <button type="button" class="btn btn-sm btn-danger" style="background-color: #ff1818;"><i class="fas fa-trash-alt"></i></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+			<div class="list"></div>
+		</div>
+	</div>
+
+	</div>
+
+
+  <script src="main.js"></script>
+  
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+</body>
+</html>
