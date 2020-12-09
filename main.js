@@ -10,7 +10,7 @@ for (let i = 0; i < list_items.length; i++) {
 		draggedItem = item;
 		setTimeout(function () {
 			item.style.display = 'none';
-		}, 0)
+		}, 0);
 	});
 
 	item.addEventListener('dragend', function () {
@@ -45,19 +45,6 @@ for (let i = 0; i < list_items.length; i++) {
 }
 
 
-// function take_input(){
-
-// 	var title = document.getElementById("titleID").value;
-// 	var desc = document.getElementById("descID").value;
-// 	if(title == '' && desc == ''){
-// 	  alert("Empty");
-// 	}
-// 	else if(title != '' && desc != ''){
-// 		$(".main_list").append('<div class="list-item" draggable="true"><div class="card" draggable="true" style="width: 14rem; height: 8rem;"><div class="card-body"><span id="expand"><i class="fas fa-angle-up"></i></span><h6 class="card-title">'+title+'</h6><p class="card-text" style="font-size: small;">'+desc+'</p><i class="fas fa-star"></i><button type="button" class="btn btn-sm btn-danger" style="background-color: #ff1818;"><i class="fas fa-trash-alt"></i></button></div></div></div>');
-// 	 }
-// 	}
-
-
 $(document).ready(function(){
 	$(".fa-angle-up").click(function(){
 	$(".fa-angle-up").css("transform","rotate(180deg)").css("transition","0.2s");
@@ -67,13 +54,46 @@ $(document).ready(function(){
 	$(".btn-danger").hide();
 });
 
-  $(".fa-angle-up").dblclick(function(){
-  $(".fa-angle-up").css("transform","rotate(360deg)").css("transition","0.2s");
-  $(".card").css("height","8rem").css("transition","height 0.2s");
-  $(".card-text").show();
-  $(".fa-star").show();
-  $(".btn-danger").show();
+	$(".fa-angle-up").dblclick(function(){
+	$(".fa-angle-up").css("transform","rotate(360deg)").css("transition","0.2s");
+	$(".card").css("height","8rem").css("transition","height 0.2s");
+	$(".card-text").show();
+	$(".fa-star").show();
+	$(".btn-danger").show();
+
+}); 
+
+
+
+
+
+	$("#add").click(function(){
+		var title = $("#titleID").val();
+		var desc = $("#descID").val();
+		if(title != '' && desc != ''){
+		var texting = '<div class="list-item" draggable="true"><div class="card"><div class="card-body"><span id="expand"><i class="fas fa-angle-up"></i></span><h6 class="card-title" contenteditable="true">'+title+'</h6><p class="card-text" contenteditable="true" style="font-size: small;">'+desc+'</p><i class="fas fa-star"></i><button type="button" class="btn btn-sm btn-danger" style="background-color: #ff1818;"><i class="fas fa-trash-alt"></i></button></div></div></div>';
+		$(".here").append(texting);
+		}
+		else{
+			alert("Empty");
+		}
+	});
+
+
+
+	$(".btn-secondary").click(function(){
+		$(".card").hide();
+	});
+
+	$(".btn-danger").click(function(){
+		$(this).parent().hide();
+
+	});
+
 
 });
 
-});
+
+
+
+

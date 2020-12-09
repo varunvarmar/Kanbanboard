@@ -70,8 +70,8 @@ header {
 }
 .card{
     background-color: #2A2A37;
-    color: white;
-
+	color: white;
+	border:none;
 }
 
 #space{

@@ -32,13 +32,13 @@
 
     <br>
 
-      <form onsubmit="take_input()">
+      <form method="get" action="">
         <div class="row">
                 &emsp;&emsp;&nbsp;
                 <input type="text" id="titleID" class="form-control w-25" name="title" placeholder="Title">&nbsp;
                 <input type="text" id="descID" class="form-control w-50" name="desc" placeholder="Description">&nbsp;
-                <button type="submit" class="btn btn-info"><i class="fas fa-plus-circle"></i>&nbsp;Add</button>&nbsp;
-                <button type="button" class="btn btn-md btn-secondary"><i class="fas fa-trash-alt"></i>&nbsp;Delete All</button>
+                <button type="button" id="add" class="btn btn-info"><i class="fas fa-plus-circle"></i>&nbsp;Add</button>&nbsp;
+                <button type="button"  class="btn btn-md btn-secondary"><i class="fas fa-trash-alt"></i>&nbsp;Delete All</button>
         </div>
       </form>
 
@@ -70,15 +70,15 @@
 	<div class="app">
 		<div class="lists">
 
-			<div class="list main_list">
+			<div class="list here">
 
 				<div class="list-item" draggable="true">
 
           <div class="card">
             <div class="card-body">
             <span id="expand"><i class="fas fa-angle-up"></i></span>
-              <h6 class="card-title">Security Check</h6>
-              <p class="card-text" style="font-size: small;">Authentications</p>
+              <h6 class="card-title" contenteditable="true">Security Check</h6>
+              <p class="card-text" contenteditable="true" style="font-size: small;">Authentications</p>
               <i class="fas fa-star"></i>
               <button type="button" class="btn btn-sm btn-danger" style="background-color: #ff1818;"><i class="fas fa-trash-alt"></i></button>
             </div>
@@ -91,27 +91,15 @@
           <div class="card">
             <div class="card-body">
             <span id="expand"><i class="fas fa-angle-up"></i></span>
-              <h6 class="card-title">Software Update</h6>
-              <p class="card-text" style="font-size: small;">Release of Patch 2.0</p>
+              <h6 class="card-title" contenteditable="true">Software Update</h6>
+              <p class="card-text" contenteditable="true" style="font-size: small;">Release of Patch 2.0</p>
               <i class="fas fa-star"></i>
               <button type="button" class="btn btn-sm btn-danger" style="background-color: #ff1818;"><i class="fas fa-trash-alt"></i></button>
             </div>
           </div>
 
         </div>
-				<div class="list-item" draggable="true">
 
-          <div class="card">
-            <div class="card-body">
-            <span id="expand"><i class="fas fa-angle-up"></i></span>
-              <h6 class="card-title">Problem with Android</h6>
-              <p class="card-text" style="font-size: small;">Testing is required </p>
-              <i class="fas fa-star"></i>
-              <button type="button" class="btn btn-sm btn-danger" style="background-color: #ff1818;"><i class="fas fa-trash-alt"></i></button>
-            </div>
-          </div>
-
-        </div>
 
       </div>
       
@@ -121,8 +109,8 @@
           <div class="card">
             <div class="card-body">
             <span id="expand"><i class="fas fa-angle-up"></i></span>
-              <h6 class="card-title">Ticket App</h6>
-              <p class="card-text" style="font-size: small;">Adding new app features</p>
+              <h6 class="card-title" contenteditable="true">Ticket App</h6>
+              <p class="card-text" contenteditable="true" style="font-size: small;">Adding new app features</p>
               <i class="fas fa-star"></i>
               <button type="button" class="btn btn-sm btn-danger" style="background-color: #ff1818;"><i class="fas fa-trash-alt"></i></button>
             </div>
@@ -137,8 +125,8 @@
           <div class="card">
             <div class="card-body">
             <span id="expand"><i class="fas fa-angle-up"></i></span>
-              <h6 class="card-title">Deployment</h6>
-              <p class="card-text" style="font-size: small;">Checking Status</p>
+              <h6 class="card-title" contenteditable="true">Deployment</h6>
+              <p class="card-text" contenteditable="true" style="font-size: small;">Checking Status</p>
               <i class="fas fa-star"></i>
               <button type="button" class="btn btn-sm btn-danger" style="background-color: #ff1818;"><i class="fas fa-trash-alt"></i></button>
             </div>
@@ -147,7 +135,21 @@
         </div>
       </div>
       
-			<div class="list"></div>
+			<div class="list">
+        <div class="list-item" draggable="true">
+
+          <div class="card">
+            <div class="card-body">
+            <span id="expand"><i class="fas fa-angle-up"></i></span>
+              <h6 class="card-title" contenteditable="true">Problem with Android</h6>
+              <p class="card-text" contenteditable="true" style="font-size: small;">Testing is required </p>
+              <i class="fas fa-star"></i>
+              <button type="button" class="btn btn-sm btn-danger" style="background-color: #ff1818;"><i class="fas fa-trash-alt"></i></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
 		</div>
 	</div>
 
